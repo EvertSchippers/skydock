@@ -1,3 +1,5 @@
+# !/bin/bash
+
 git config --global user.email "skydock@address.com"
 git config --global user.name "Sky Dock"
 
