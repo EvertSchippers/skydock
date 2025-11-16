@@ -1,3 +1,5 @@
+git config --global user.email "skydock@address.com"
+git config --global user.name "Sky Dock"
 
 git pull origin main || { echo "Git pull failed..."; exit 1; }
 pip install -r ./me/requirements.txt || { echo "Pip install failed..."; exit 1; }
