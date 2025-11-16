@@ -1,8 +1,8 @@
 #!/bin/bash
 
-git clone "$REPO" . || { echo "Git clone failed..."; sleep 60; continue; }
-pip install -e ./me || { echo "Pip install failed..."; sleep 60; continue; }
+git clone "$REPO" . || { echo "Git clone failed..."; exit 1; }
+pip install -r requirements.txt || { echo "Pip install failed..."; exit 1; }
 
 echo "Running python me.py..."
-python -c 'from me.main import *; wake_up()' || { echo "Python script failed..."; sleep 60; continue; }
+python -c 'from me.main import *; wake_up()' || { echo "Python script failed..."; exit 1; }
 
