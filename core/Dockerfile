@@ -9,5 +9,7 @@ RUN mkdir -p /skydock
 WORKDIR /skydock
 
 COPY launch.sh /skydock/
-RUN chmod +x /skydock/launch.sh
-CMD ./launch.sh
+
+RUN chmod +x /skydock/launch.sh && \
+    sed -i 's/\r$//' /skydock/launch.sh
+CMD ["/skydock/launch.sh"]
