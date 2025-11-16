@@ -4,10 +4,10 @@ RUN apt-get update \
     && apt-get install -y git \
     && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir -p /repo
+RUN mkdir -p /skydock
 
-WORKDIR /repo
+WORKDIR /skydock
 
-COPY loop.sh /repo/
-RUN chmod +x /repo/loop.sh
-CMD ./loop.sh
+COPY launch.sh /skydock/
+RUN chmod +x /skydock/launch.sh
+CMD ./launch.sh
